@@ -2,11 +2,14 @@ import 'dart:io';
 import "dart:math";
 
 void main(List<String> arguments) {
+  print('choose the biggest possible number');
+  int maxNum = getInput();
+  print("start guessing!");
   while (true) {
     int parsedInput = getInput();
     print("you entered: $parsedInput");
     Random randGen = Random();
-    int randNum = randGen.nextInt(10);
+    int randNum = randGen.nextInt(maxNum);
     print("the answer is: $randNum");
     if (parsedInput == randNum) {
       print("you win!");
