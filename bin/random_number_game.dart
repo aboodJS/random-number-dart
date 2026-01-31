@@ -4,12 +4,12 @@ import "dart:math";
 
 void main(List<String> arguments) {
   print('choose the biggest possible number');
-  int maxNum = getInput();
+  int maxNum = getInput(11);
   print(maxNum);
 
   print("start guessing!");
   while (true) {
-    int parsedInput = getInput();
+    int parsedInput = getInput(10);
     print("you entered: $parsedInput");
     Random randGen = Random();
     int randNum = randGen.nextInt(maxNum);
@@ -21,12 +21,12 @@ void main(List<String> arguments) {
   }
 }
 
-int getInput() {
+int getInput(int num) {
   stdout.write("please enter a number: ");
   String? input = stdin.readLineSync();
   if (input == '') {
-    print("value automatically set to 10");
-    return 10;
+    print("value set automatically");
+    return num;
   } else {
     int parsedInput = int.parse(input!);
     return parsedInput;
