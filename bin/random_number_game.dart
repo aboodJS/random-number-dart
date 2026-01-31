@@ -25,7 +25,7 @@ int getInput() {
   stdout.write("please enter a number: ");
   String? input = stdin.readLineSync();
   if (input == '') {
-    print("enter a valid number");
+    print("value automatically set to 10");
     return 10;
   } else {
     int parsedInput = int.parse(input!);
