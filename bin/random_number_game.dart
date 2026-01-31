@@ -1,9 +1,12 @@
+import 'dart:ffi';
 import 'dart:io';
 import "dart:math";
 
 void main(List<String> arguments) {
   print('choose the biggest possible number');
   int maxNum = getInput();
+  print(maxNum);
+
   print("start guessing!");
   while (true) {
     int parsedInput = getInput();
@@ -21,6 +24,11 @@ void main(List<String> arguments) {
 int getInput() {
   stdout.write("please enter a number: ");
   String? input = stdin.readLineSync();
-  int parsedInput = int.parse(input!);
-  return parsedInput;
+  if (input == '') {
+    print("enter a valid number");
+    return 10;
+  } else {
+    int parsedInput = int.parse(input!);
+    return parsedInput;
+  }
 }
